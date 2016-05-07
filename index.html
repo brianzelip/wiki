@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://npmcdn.com/basscss@7.1.1/css/basscss.min.css">
+    <title>WikipediaViewer</title>
+    <meta name="description" content="Third-party web app that retrieves and displays Wikipedia content. Built in response to a FreeCodeCamp challenge.">
+    <meta name="author" content="Brian Zelip">
+    <meta name="keywords" content="sandbox, API, Wikipedia, 'MediaWiki API', javascript, jQuery, FreeCodeCamp">
+    <style>
+      .justify-center { justify-content: center; }
+      .mx2 {
+        margin-right: 1rem;
+        margin-left: 1rem;
+      }
+      .mx1 {
+        margin-right: .5rem;
+        margin-left: .5rem;
+      }
+      .h0 { font-size: 3rem; }
+      @media(min-width: 40em) {
+        .sm-mt3 { margin-top: 2rem; }
+        .sm-mb2 { margin-bottom: 1rem; }
+        .sm-mb2-5 { margin-bottom: 1.5rem; }
+        .sm-p2 { padding: 1rem; }
+        .sm-flex-row { flex-direction: row; }
+        .sm-flex-first { order: -1; }
+        .sm-flex-last { order: 2; }
+        .sm-col-10 { width: 83.33333%; }
+      }
+      .border-purple { border-color: #b10dc9; }
+      .monospace { font-family: "PT Mono", "Consolas", monospace; }
+      .flex-1 { flex-grow: 1; }
+      .flex-2 { flex-grow: 2; }
+      .flex-3 { flex-grow: 3; }
+      .flex-4 { flex-grow: 4; }
+      .my2-5 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .mt2-5 { margin-top: 1.5rem; }
+      .mb2-5 { margin-bottom: 1.5rem; }
+      .height1 { height: .5rem; }
+      .height2 { height: 1rem; }
+      .height3 { height: 2rem; }
+      .height4 { height: 4rem; }
+      .hv-purple:hover { background-color: rgba(177,13,201,.15); }
+      .dark-gray { color: rgb(119,119,119); }
+      .light-purple { color: rgba(177,13,201,.6)}
+      .text-decoration-none:hover { text-decoration: none; }
+    </style>
+  </head>
+
+  <body class="p2">
+
+    <main class="container clearfix sm-mt3">
+      <div class="sm-col-10 mx-auto">
+        <div class="p1 sm-p2">
+          <!--<p class="center muted">
+            <span class="inline-block p1 mx-auto bg-purple white monospace ">[work in progress]</span>
+          </p>-->
+          <h1 class="h0 my2-5 center purple">Wikipedia Access Point</h1>
+          <p class="mb3 sm-mb2 center purple">[Crafted by <a href="https://twitter.com/bzelip" class="purple">@bzelip</a> for <a href="https://freecodecamp.com" class="purple">FreeCodeCamp</a>]</p>
+          <div class="flex flex-column sm-flex-row flex-center justify-center">
+            <div class="flex flex-3 flex-last sm-flex-first p1 border border-purple">
+              <input type="text" autofocus="true" id="userInput" class="flex-4 border-none" placeholder="Search for content">
+              <input type="submit" id="submit" class="btn btn-primary center bg-purple white" value="Search">
+            </div>
+            <p class="flex-2 h1 my2-5 px2 center purple bold">OR</p>
+            <a href="https://en.wikipedia.org/wiki/Special:Random" class="flex-first sm-flex-last btn btn-primary bg-purple center white">View random page</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="container clearfix">
+      <div class="sm-col-10 mx-auto">
+        <div class="p1 sm-p2">
+          <div id="searchConfirm" class="px2"></div>
+          <ul id="results" class="list-reset"></ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/jquery/2.2.3/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+
+</html>
